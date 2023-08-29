@@ -1,0 +1,47 @@
+[
+  {
+    "id": "00001",
+    "name": "Biscuits de poisson (x4)",
+    "image": "/images/fish-biscuit.webp",
+    "description": "Un délicieux biscuit de poisson, dont les requins raffolent!",
+    "price": 4.00,
+    "imgWidth": 200,
+    "imgHeight": 152
+  },
+  {
+    "id": "00002",
+    "name": "Tarte de pirate",
+    "image": "/images/pirate-pie.webp",
+    "description": "Le dessert préféré de Kwazii, à base de mucus!",
+    "price": 12.00,
+    "imgWidth": 200,
+    "imgHeight": 84
+  },
+  {
+    "id": "00003",
+    "name": "Cake au kelp",
+    "image": "/images/cake-kelp.webp",
+    "description": "Un gateau au Kelp",
+    "price": 15.00,
+    "imgWidth": 200,
+    "imgHeight": 110
+  },
+  {
+    "id": "00004",
+    "name": "Peluche Barnacle",
+    "image": "/images/peluche-barnacle.webp",
+    "description": "Une mignonne peluche sous les traits du capitaine Barnacle",
+    "price": 35.00,
+    "imgWidth": 200,
+    "imgHeight": 262
+  },
+  {
+    "id": "00005",
+    "name": "Peluche Twick",
+    "image": "/images/peluche-twick.webp",
+    "description": "Une mignonne peluche sous les traits de Twick !",
+    "price": 35.00,
+    "imgWidth": 200,
+    "imgHeight": 268
+  }
+]
