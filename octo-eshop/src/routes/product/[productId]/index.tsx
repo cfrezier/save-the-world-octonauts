@@ -6,7 +6,7 @@ import ProductCard from "~/components/product/product-card";
 import Home from "~/components/home/home";
 
 export const useProductDetails = routeLoader$(async (requestEvent) => {
-    const url = `${window.location.origin}/api/products/id/${requestEvent.params.productId}`;
+    const url = `${requestEvent.url.origin}/api/products/id/${requestEvent.params.productId}`;
     console.log(`FETCH ${url} start`);
     const res = await fetch(url);
     console.log(`FETCH ${url} done`);
