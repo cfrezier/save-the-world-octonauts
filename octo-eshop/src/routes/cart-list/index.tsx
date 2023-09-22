@@ -5,6 +5,7 @@ import {CART_CTX} from "~/components/cart/cart";
 import Home from "~/components/home/home";
 import {routeAction$} from "@builder.io/qwik-city";
 import {saveCommand} from "~/service/command-utils";
+import {Image} from "@unpic/qwik";
 
 export const transformCartForPayload = (data: { content: ProductInstance[] }) => {
     return data.content.map((inst: ProductInstance) => ({
@@ -41,49 +42,56 @@ export default component$(() => {
         <Home></Home>
         {
             cart.content.length === 0 ?
-                <div>Aucun produit dans votre panier.</div> :
-                <>
-                    <div>
-                        <table class={'cart-table'}>
-                            <thead>
-                            <tr>
-                                <th>Produit</th>
-                                <th>Prix unitaire</th>
-                                <th>Quantité</th>
-                                <th>Valeur</th>
+                <div class={'u-mt-4'}>Aucun produit dans votre panier.</div> :
+                <div className={'m-table-wrapper'}>
+                    <table className={'m-table'}>
+                        <thead>
+                        <tr>
+                            <th>Produit</th>
+                            <th>Prix unitaire</th>
+                            <th>Quantité</th>
+                            <th>Valeur</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {cart.content.map((instance: ProductInstance) => (
+                            <tr key={instance.product.id} className={'cart-line'}>
+                                <td>
+                                    <Image
+                                        src={instance.product.image}
+                                        layout="constrained"
+                                        width={instance.product.imgWidth}
+                                        height={instance.product.imgHeight}
+                                        alt="A lovely bath"/>
+                                    <p>{instance.product.name}</p>
+                                </td>
+                                <td>{instance.product.price} €</td>
+                                <td>{instance.howMany}</td>
+                                <td>{instance.howMany * instance.product.price} €</td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            {cart.content.map((instance: ProductInstance) => (
-                                <tr key={instance.product.id} class={'cart-line'}>
-                                    <td>{instance.product.name}</td>
-                                    <td>{instance.product.price}€</td>
-                                    <td>{instance.howMany}€</td>
-                                    <td>{instance.howMany * instance.product.price}€</td>
-                                </tr>
-                            ))}
-                            <tr class={'cart-total'}>
-                                <td></td>
-                                <td></td>
-                                <td>Nombre d'articles: {numberOfArticles}</td>
-                                <td>Total: {total}€</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        ))}
+                        <tr className={'m-table-total'}>
+                            <td></td>
+                            <td></td>
+                            <td>Nombre d'articles: {numberOfArticles}</td>
+                            <td>Total: {total} €</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-                    <button onClick$={async () => {
+                    <button class={'a-button'} onClick$={async () => {
                         await action.submit({cart: transformCartForPayload(cart)});
                     }}
                             disabled={action.value?.success}>
-                        Commander
+                        <i class={'a-icon a-icon--pay'}></i>
+                        <span class={'a-label'}>Commander</span>
                     </button>
 
                     {action.value?.success && (
-                        <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux
+                        <p class={'a-validation u-mt-2'}>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux
                             marins vous remercient !</p>
                     )}
-                </>
+                </div>
         }
     </>);
 });

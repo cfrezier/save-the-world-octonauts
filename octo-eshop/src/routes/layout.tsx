@@ -18,19 +18,25 @@ export const onGet: RequestHandler = async ({cacheControl}) => {
 
 export default component$(() => {
     return <>
-        <h1>Aidez les Octonautes à sauver la planète !</h1>
-        <div class="bdx-io">
-            <ImageBdxIO alt={'Logo BdxIO'}/>
-        </div>
-        <div class="author center-image">
-            <ImageAuthor class={'circle'} alt={'Avatar cfrezier'}/>@cfrezier
-        </div>
-        <Cart>
-            <Slot/>
-        </Cart>
-        <div class="onepoint center-image">
-            Made with ❤️ by @cfrezier impersonating Cassie, with the courtesy of <ImageOnepoint alt={'Logo onepoint'}/>
-        </div>
+        <header class={'o-header'}>
+            <ImageBdxIO class={'bdx-logo'} alt={'Logo BdxIO'}/>
+            <h1 class={'a-title-principal'}>Aidez les Octonautes à sauver la planète !</h1>
+            <div className="a-author">
+                <ImageAuthor class={'a-avatar'} alt={'Avatar cfrezier'}/>@cfrezier
+            </div>
+        </header>
+        <main class={'o-main'}>
+            <Cart>
+                <Slot/>
+            </Cart>
+        </main>
+        <footer class={'o-footer'}>
+            <p className="onepoint center-image">
+                Made with ❤️ by @cfrezier impersonating Cassie, with the courtesy of
+            </p>
+            <ImageOnepoint
+                alt={'Logo onepoint'}/>
+        </footer>
     </>;
 });
 

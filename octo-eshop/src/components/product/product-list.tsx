@@ -21,26 +21,29 @@ export default component$(() => {
     console.log('Render');
 
     return (
-        <main>
-            <section>
+        <section>
+            <ul class={'m-list-product'}>
                 <Resource
                     value={reposResource}
                     onPending={() => <div>Chargement des produits...</div>}
                     onRejected={() => <div>Erreur de chargement des produits</div>}
                     onResolved={(products) => {
-                        return <div class={'product-list'}>
-                                {products.map(({ id, ...rest }) => (
-                                    <div key={id} class={'product-list-item'}>
-                                        <ProductCard product={{...rest, id}}></ProductCard>
-                                    </div>
-                                ))}
-                                </div>;
+                        return <>
+                            {products.map(({id, ...rest}) => (
+                                <li key={id}>
+                                    <ProductCard product={{...rest, id}}></ProductCard>
+                                </li>
+                            ))}
+                        </>;
 
                     }}
                 />
-                <button onClick$={() => date.value = new Date().getTime()}>Rafraichir</button>
-            </section>
-        </main>
+            </ul>
+            <button className={'a-button a-button--attached'} onClick$={() => date.value = new Date().getTime()}>
+                <i className={'a-icon a-icon--refresh'}></i>
+                <span class={'a-label'}>Rafraichir</span>
+            </button>
+        </section>
     );
 });
 

@@ -14,9 +14,11 @@ export default component$(() => {
     });
 
     return (<>
-        <div>
-            <Link href={'/cart-list'} class={'a-btn'}>Voir mes {numberOfArticles} produits</Link>
-        </div>
+        <Link href={'/cart-list'} class={'m-basket'}>
+            <i class={'a-icon a-icon--basket'}></i>
+            <span class={'a-number'}>{numberOfArticles}</span>
+            <span class={'a-label'}>Mon panier</span>
+        </Link>
         <Slot/>
     </>);
 });

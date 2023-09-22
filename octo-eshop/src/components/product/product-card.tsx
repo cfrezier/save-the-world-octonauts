@@ -22,24 +22,25 @@ export default component$((props: ProductCardProps) => {
 
     return (
         <>
-            <div key={props.product.id} class={'product-card'}>
-
+            <article key={props.product.id} class={'m-product'}>
                 <Link href={'/product/' + props.product.id}>
-                    <Image
-                        src={props.product.image}
-                        layout="constrained"
-                        width={props.product.imgWidth}
-                        height={props.product.imgHeight}
-                        alt="A lovely bath"/>
+                    <div class={'m-img-wrapper'}>
+                        <Image
+                            src={props.product.image}
+                            layout="constrained"
+                            width={props.product.imgWidth}
+                            height={props.product.imgHeight}
+                            alt="A lovely bath"/>
+                    </div>
+                    <h2 class={'a-title'}>{props.product.name}</h2>
+                    <p class={'a-description'}>{props.product.description}</p>
+                    <p class={'a-price'}>{props.product.price} €</p>
                 </Link>
-                <h2>{props.product.name}</h2>
-                <p>{props.product.description}</p>
-                <div>
-                    <p>
-                        <button onClick$={addToCart}>Add to Cart (${props.product.price}€)</button>
-                    </p>
-                </div>
-            </div>
+                <button class={'a-button'} onClick$={addToCart}>
+                    <i class={'a-icon a-icon--buy'}></i>
+                    <span class={'a-label'}>Ajouter à mon panier</span>
+                    </button>
+            </article>
         </>
     );
 });
