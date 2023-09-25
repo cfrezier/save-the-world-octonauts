@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
     <link rel="stylesheet" href="./octonauts.css">
 
     <!-- Theme used for syntax highlighted code -->
@@ -1080,6 +1080,26 @@
                 </code>
                 </pre>
             </section>
+            <section data-auto-animate>
+                <p>Oui, ça ressemble à du React.</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        /** @jsxImportSource react */
+                        import { qwikify$ } from '@builder.io/qwik-react';
+
+                        // Create React component standard way
+                        function Greetings() {
+                        return <p>Hello from React</p>;
+                        }
+
+                        // Convert React component to Qwik component
+                        export const QGreetings = qwikify$(Greetings);
+                    </script>
+                </code>
+                </pre>
+                <p>Et on peut aussi intégrer des composants <a href="https://www.npmjs.com/package/@qwikdev/qwik-angular">Angular</a></p>
+            </section>
         </section>
 
         <section>
@@ -2118,7 +2138,7 @@
                         // Prepare gcloud cli
                         gcloud auth login
                         gcloud config set project ...
-                        gcloud config set run/region europe-central2
+                        gcloud config set run/region europe-west1
 
                         // Configuration variables environnement
 
