@@ -21,7 +21,7 @@ export default component$(() => {
         <header class={'o-header'}>
             <ImageBdxIO class={'bdx-logo'} alt={'Logo BdxIO'}/>
             <h1 class={'a-title-principal'}>Aidez les Octonautes à sauver la planète !</h1>
-            <div className="a-author">
+            <div class="a-author">
                 <ImageAuthor class={'a-avatar'} alt={'Avatar cfrezier'}/>@cfrezier
             </div>
         </header>
@@ -31,7 +31,7 @@ export default component$(() => {
             </Cart>
         </main>
         <footer class={'o-footer'}>
-            <p className="onepoint center-image">
+            <p class="onepoint center-image">
                 Made with ❤️ by @cfrezier impersonating Cassie, with the courtesy of
             </p>
             <ImageOnepoint
@@ -45,8 +45,12 @@ export const head: DocumentHead = {
     meta: [
         {
             name: "description",
-            content: "Qwik site description",
+            content: "Eshop: Les octonautes sauvent le monde avec Qwik",
         },
+        {
+            name: 'theme-color',
+            content: '#0d99a5'
+        }
     ],
     links: [
         {

@@ -43,8 +43,8 @@ export default component$(() => {
         {
             cart.content.length === 0 ?
                 <div class={'u-mt-4'}>Aucun produit dans votre panier.</div> :
-                <div className={'m-table-wrapper'}>
-                    <table className={'m-table'}>
+                <div class={'m-table-wrapper'}>
+                    <table class={'m-table'}>
                         <thead>
                         <tr>
                             <th>Produit</th>
@@ -55,7 +55,7 @@ export default component$(() => {
                         </thead>
                         <tbody>
                         {cart.content.map((instance: ProductInstance) => (
-                            <tr key={instance.product.id} className={'cart-line'}>
+                            <tr key={instance.product.id} class={'cart-line'}>
                                 <td>
                                     <Image
                                         src={instance.product.image}
@@ -70,7 +70,7 @@ export default component$(() => {
                                 <td>{instance.howMany * instance.product.price} €</td>
                             </tr>
                         ))}
-                        <tr className={'m-table-total'}>
+                        <tr class={'m-table-total'}>
                             <td></td>
                             <td></td>
                             <td>Nombre d'articles: {numberOfArticles}</td>

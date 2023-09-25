@@ -39,8 +39,8 @@ export default component$(() => {
                     }}
                 />
             </ul>
-            <button className={'a-button a-button--attached'} onClick$={() => date.value = new Date().getTime()}>
-                <i className={'a-icon a-icon--refresh'}></i>
+            <button class={'a-button a-button--attached'} onClick$={() => date.value = new Date().getTime()} title={'Rafraichir'}>
+                <i class={'a-icon a-icon--refresh'}></i>
                 <span class={'a-label'}>Rafraichir</span>
             </button>
         </section>

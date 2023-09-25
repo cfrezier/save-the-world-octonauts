@@ -30,7 +30,7 @@ export default component$((props: ProductCardProps) => {
                             layout="constrained"
                             width={props.product.imgWidth}
                             height={props.product.imgHeight}
-                            alt="A lovely bath"/>
+                            alt={props.product.name}/>
                     </div>
                     <h2 class={'a-title'}>{props.product.name}</h2>
                     <p class={'a-description'}>{props.product.description}</p>

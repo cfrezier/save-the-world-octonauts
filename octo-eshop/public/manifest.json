@@ -1,9 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "qwik-project-name",
-  "short_name": "Welcome to Qwik",
+  "name": "save-the-world-octonauts",
+  "short_name": "Les octonautes sauvent le monde avec Qwik",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "A Qwik project app."
+  "theme_color": "#0d99a5",
+  "description": "Les octonautes sauvent le monde avec Qwik",
+  "icons": [
+    {
+      "src": "images/octo-eshop-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
