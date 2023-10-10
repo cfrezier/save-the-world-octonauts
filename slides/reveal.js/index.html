@@ -2052,10 +2052,22 @@
                 </aside>
             </section>
             <section>
-                <p>Actions</p>
+                <p> Déclencher des routeAction$</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
+                        // Définition de l'action
+                        export const useCommand = routeAction$(async (payload) => {
+                            const command = saveCommand(payload);
+                            console.log(`Commande reçue: ${command}`);
+                            return {
+                                success: command > -1,
+                                commandId: command
+                            };
+                        });
+                        //...
+
+
                         // en mode programmatique
                         <button onClick$={async ()=> {await action.submit({cart});}}
                             disabled={action.value?.success}>
@@ -2075,6 +2087,9 @@
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <p>Il faut bien commencer quelque part: comment faire un appel ?</p>
+                </aside>
             </section>
             <section><p>Middlewares</p>
                 <pre data-id="code-animation">
@@ -2096,6 +2111,9 @@
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <p>On retrouve des mécanismes classiques de backend</p>
+                </aside>
             </section>
             <section>
                 <p>Endpoints</p>
@@ -2118,6 +2136,9 @@
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <p>On peut répondre directement avec le backend Qwik si c'est ce qu'on souhaite</p>
+                </aside>
             </section>
             <section>
                 <p>server$</p>
@@ -2224,7 +2245,7 @@
 
         <section>
             <section data-auto-animate>
-                <p>Allons un peu plus loin</p>
+                <p>Librairies tierces</p>
                 <div class="grid-perso">
                     <div class="perso active">
                         <div class="portrait">
@@ -2245,7 +2266,7 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                <p>Allons un peu plus loin</p>
+                <p>Librairies tierces</p>
                 <div class="grid-perso">
                     <div class="perso">
                         <div class="portrait">
@@ -2302,11 +2323,24 @@
                 </pre>
                 <p class="code-font-sm">Puis utilisation de hljs "comme si de rien n'était"</p>
             </section>
+            <section>
+                <p>...et bien d'autres choses encore !</p>
+                <a href="https://qwik.builder.io/docs/integrations/#list-of-possible-integrations" target="_blank">Intégrations</a>
+                <aside class="notes">
+                    <p>Il y a tout un tas de choses qui ont été prémâchées</p>
+                    <ul>
+                        <li>Internationalisation</li>
+                        <li>Bootstrap/Tailwind/...</li>
+                        <li>Auth.js</li>
+                        <li>Storybook</li>
+                    </ul>
+                </aside>
+            </section>
         </section>
 
         <section>
             <section data-auto-animate>
-                <p>Du backend ?</p>
+                <p>Bon alors, la démo ?</p>
                 <div class="grid-perso">
                     <div class="perso active">
                         <div class="portrait">
@@ -2326,7 +2360,7 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                <p>Du backend ?</p>
+                <p>Bon alors, la démo ?</p>
                 <div class="grid-perso">
                     <div class="perso">
                         <div class="portrait">
@@ -2342,11 +2376,11 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Je vous montre ça capitaine !
+                    Je dois déployer et puis je vous montre ça capitaine !
                 </aside>
             </section>
             <section>
-                <a href="https://qwik.builder.io/docs/integrations/#list-of-possible-integrations" target="_blank">Intégrations</a>
+                <a href="https://qwik.builder.io/docs/deployments/" target="_blank">Deployments</a>
             </section>
             <!--<section>
                 <p>Intégration Node</p>
@@ -2388,7 +2422,7 @@
                 </code>
                 </pre>
                 <aside class="notes">
-                    On peut même aller voir l'analyse LightHouse
+                    <p>On peut même aller voir l'analyse LightHouse</p>
                 </aside>
             </section>
             <section>
