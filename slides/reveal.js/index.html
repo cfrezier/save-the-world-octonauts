@@ -2058,12 +2058,12 @@
                     <script type="text/template">
                         // Définition de l'action
                         export const useCommand = routeAction$(async (payload) => {
-                            const command = saveCommand(payload);
-                            console.log(`Commande reçue: ${command}`);
-                            return {
-                                success: command > -1,
-                                commandId: command
-                            };
+                        const command = saveCommand(payload);
+                        console.log(`Commande reçue: ${command}`);
+                        return {
+                        success: command > -1,
+                        commandId: command
+                        };
                         });
                         //...
 
@@ -2427,6 +2427,92 @@
             </section>
             <section>
                 <img src="./images/lighthouse.png">
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Plus éco-responsable ?</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <p>Cassie, c'est vraiment super ce que tu as construit. Mais et si je voulais aller encore plus loin
+                        ?</p>
+                    <p>Par exemple, j'aimerai qu'on ne génère pas une page chaque fois qu'un visiteur vient sur le site
+                        !</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Plus éco-responsable ?</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <p>Tu as tout à fait raison Peso, je n'y avais pas pensé !</p>
+                    <p>Je le fais tout de suite en utilisant l'intégration "Generation Statique"</p>
+                </aside>
+            </section>
+            <section>
+                <a href="https://qwik.builder.io/docs/guides/static-site-generation/" target="_blank">Génération HTML
+                    statique</a>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        npm run qwik add
+                        // Choose "Adapter: Static site (.html files)"
+
+                        npm run build
+                        // Static site generated in ./dist
+                    </script>
+                </code>
+                </pre>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        // vite.config.ts
+                        plugins: [staticAdapter({
+                        origin: "https://my-url",
+                        })]
+
+                        // Pour les routes avec des paramètres
+                        export const onStaticGenerate: StaticGenerateHandler = async () => {
+                        return {
+                        // Accéder à la DB par exemple
+                        params: ["00001" ,"00002", "00003", "00004", "00005"].map((id) => {
+                        return { productId: id };
+                        }),
+                        };
+                        };
+                    </script>
+                </code>
+                </pre>
             </section>
         </section>
 
