@@ -1,7 +1,39 @@
+.fullscreen {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+}
+
+body.intro-video {
+    .fullscreen {
+        display: block;
+    }
+}
+
 .bdx-io {
     position: absolute;
     top: 10px;
     left: 10px;
+}
+
+body {
+    .onepoint.for-intro {
+        display: none;
+    }
+    .onepoint.no-intro {
+        display: block;
+    }
+}
+
+body.intro {
+    .onepoint.for-intro {
+        display: block;
+    }
+    .onepoint.no-intro {
+        display: none;
+    }
 }
 
 .onepoint {
