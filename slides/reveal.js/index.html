@@ -39,7 +39,12 @@
 
 <div class="reveal">
     <div class="slides">
-        <section data-state="intro intro-video"></section>
+        <section data-state="intro intro-video">
+            <aside class="notes">
+                Préparer terminal avec profil 'CONF'
+                Vérifier gcloud run deploy octo-eshop --source .
+            </aside>
+        </section>
 
         <section data-state="intro">
             <div class="center-image qwik-title">
@@ -378,7 +383,7 @@
                 </div>
             </div>
             <aside class="notes">
-                <div>TEMPO: 2:15</div>
+                <div>TEMPO: 2:00</div>
 
                 <div>Alors j'interrompt cet épisode non-officiel des octonautes pour me présenter: "je m'appelle
                     Christophe Frézier et voilà où me retrouver, je travaille pour onepoint et en particulier pour un
@@ -470,7 +475,7 @@
                 <img src="./images/fcp.avif">
                 <p>FP: First Painting</p>
                 <p>FCP: First Contentful Painting</p>
-                <p>TTI: Time to Interactive (switched to CLS: Cumulative Layout Shift)</p>
+                <p>TTI: Time to Interactive</p>
                 <aside class="notes">
                     On peut interagir
                     <div>C'est le moment où on a réussi à capter l'attention de l'utilisateur</div>
@@ -480,18 +485,21 @@
             <section>
                 <img src="./images/fcp-why.png">
                 <aside class="notes">
+                    <div>TEMPO: 4:40</div>
                     <div>Correspond à des évènements techniques</div>
-                    <div>FP: chargement de la page html en elle-même</div>
-                    <div>FCP: réconciliation CSS</div>
-                    <div>TTI nécessite la récupération et l'exécution du JS</div>
+                    <div>FP: chargement de la page html uniquement</div>
+                    <div>FCP: page html + rendu JS si besoin</div>
+                    <div>TTI: page html + rendu JS + écouteurs dévènements</div>
                 </aside>
             </section>
 
             <section>
                 Les types de rendu web
                 <aside class="notes">
-                    <div>TEMPO: 6:15</div>
-                    <div>Pour arriver à ça, on a utilisé dans le temps plusieurs façons de faire</div>
+                    <div>TEMPO: 6:00</div>
+                    <div>Partant de ces définitions, on a utilisé dans le temps plusieurs façons de faire pour essayer
+                        d'améliorer l'UX utilisateur
+                    </div>
                 </aside>
             </section>
 
@@ -533,7 +541,6 @@
                 <aside class="notes">
                     <p>Très performant, et responsable</p>
                     <p>Pas ou peu d'interactions</p>
-                    <p>Développement pas génial</p>
                 </aside>
             </section>
 
@@ -980,7 +987,7 @@
                     </tbody>
                 </table>
                 <aside class="notes">
-                    <div>TEMPO: 10:45</div>
+                    <div>TEMPO: 10:30</div>
                     <p>Grosse amélioration TTI</p>
                     <p>Optimisations de ce qui est possible en plus</p>
                     <div>Do better by doing (almost) nothing !</div>
@@ -1012,7 +1019,6 @@
             </section>
         </section>
 
-
         <section>
             <section data-auto-animate>
                 <p>Premiers pas</p>
@@ -1031,7 +1037,7 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    <div>TEMPO: 11:35</div>
+                    <div>TEMPO: 12:00</div>
                     D'accord Cassie, tout cela est bien beau, mais tu ne nous as pas encore expliqué comment tu faisais
                     ! Ni comment cela fonctionnait !
                 </aside>
@@ -1058,30 +1064,148 @@
             </section>
             <section data-auto-animate>
                 <div>Exemple</div>
-                <div>npm create qwik@latest</div>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm">
+                    npm create qwik@latest
+                </code>
+                </pre>
                 <aside class="notes">
-                    <div>TEMPO: 11:50</div>
+                    <div>TEMPO: 12:15</div>
                 </aside>
             </section>
             <section data-auto-animate>
                 <div>Exemple</div>
-                <div>npm create qwik@latest</div>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm">
+                    npm create qwik@latest
+                </code>
+                </pre>
                 <div><img src="./images/joke.png" style="height: 400px;"></div>
             </section>
             <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm">
+                    npm run start
+                </code>
+                </pre>
                 <a href="name" target="_blank">Starting App</a>
                 <aside class="notes">
                     Montrer:
+                    <div>- Counter</div>
                     <div>- Steps</div>
-                    <div>- Flower & Todo</div>
+                    <div>- Doc</div>
                     <div>- @QwikDev</div>
                 </aside>
             </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 14:15</div>
+                    Oui mais concrètement, comment j'écris un composant Qwik ?
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Je vous montre ça Professeur
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        import {component$} from "@builder.io/qwik";
+
+                        export default component$(() => {
+                            return (
+                            <>
+                                <h1>Hello Bdx IO !</h1>
+                                <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
+                            </>
+                            );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>Voilà un exemple avec:</div>
+                    <div>- un rendu</div>
+                    <div>- une interaction</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Pour ceux qui aiment React</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        /** @jsxImportSource react */
+                        import { qwikify$ } from '@builder.io/qwik-react';
+
+                        // Create React component standard way
+                        function Greetings() {
+                            return <p>Hello from React</p>;
+                        }
+
+                        // Convert React component to Qwik component
+                        export const QGreetings = qwikify$(Greetings);
+                    </script>
+                </code>
+                </pre>
+            </section>
+            <section data-auto-animate>
+                <p>Oui, ça ressemble à du React.</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        /** @jsxImportSource react */
+                        import { qwikify$ } from '@builder.io/qwik-react';
+
+                        // Create React component standard way
+                        function Greetings() {
+                            return <p>Hello from React</p>;
+                        }
+
+                        // Convert React component to Qwik component
+                        export const QGreetings = qwikify$(Greetings);
+                    </script>
+                </code>
+                </pre>
+                <p>Et on peut aussi intégrer des composants <a
+                        href="https://www.npmjs.com/package/@qwikdev/qwik-angular">Angular</a></p>
+            </section>
+
             <section data-auto-animate>
                 Résumabilité
                 <aside class="notes">
-                    <div>TEMPO: 12:50</div>
-                    LE concept qui fait de Qwik ce qu'il est
+                    <div>TEMPO: 14:15</div>
+                    <div>LE concept qui fait de Qwik ce qu'il est</div>
                 </aside>
             </section>
             <section data-auto-animate data-auto-animate-id="loader">
@@ -1100,8 +1224,20 @@
                 <p class="aside-text">(Pour les débutants, vous pouvez dormir 2 minutes)</p>
                 <img src="./images/onevent.png" style="height: 400px;">
                 <aside class="notes">
-                    <div>TEMPO: ??:??</div>
+                    <div>TEMPO: 15:00</div>
                     <div>Qwik ne va télécharger le JS qu'au moment où il en a besoin !</div>
+                </aside>
+            </section>
+            <section>
+                <p>Ce qui est envoyé ?</p>
+                <ul>
+                    <li>Etat minimisé</li>
+                    <li>Dépendances entre fragments</li>
+                    <li>Reactions aux interactions</li>
+                    <li>JS nécessaire (useVisibleTask$, ...)</li>
+                </ul>
+                <aside class="notes">
+                    <div>TEMPO: 15:30</div>
                 </aside>
             </section>
             <section data-auto-animate data-auto-animate-id="code1">
@@ -1152,19 +1288,11 @@
                 </code>
                 </pre>
                 <aside class="notes">
+                    <div>TEMPO: 16:15</div>
                     <p>Type spécifique, compris par celui qui en a besoin</p>
                     <p>On devine les références au code Javascript</p>
                     <p>On devine les dépendances entre fragments</p>
                 </aside>
-            </section>
-            <section>
-                <p>Ce qui est envoyé ?</p>
-                <ul>
-                    <li>Etat minimisé</li>
-                    <li>Dépendances entre fragments</li>
-                    <li>Reactions aux interactions</li>
-                    <li>JS nécessaire (vraiment nécessaire !)</li>
-                </ul>
             </section>
             <section>
                 <p>Comment il s'y retrouve ?</p>
@@ -1196,127 +1324,33 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                <div>Complexe, mais...</div>
+                <div>Pas super lisible, mais...</div>
+                <aside class="notes">
+                    <div>TEMPO: 18:00</div>
+                </aside>
             </section>
             <section data-auto-animate>
-                <div>Complexe, mais...</div>
+                <div>Pas super lisible, mais...</div>
                 <ul>
                     <li>Le framework est responsable de ces optimisations</li>
                 </ul>
             </section>
             <section data-auto-animate>
-                <div>Complexe, mais...</div>
+                <div>Pas super lisible, mais...</div>
                 <ul>
                     <li>Le framework est responsable de ces optimisations</li>
                     <li>Uniquement la partie nécessaire de l'application est envoyée</li>
                 </ul>
+                <aside class="notes">
+                    <p>En particulier, on n'envoie pas un contenu obtenu par API qui ne peut plus changer !</p>
+                </aside>
             </section>
             <section>
                 <img src="./images/peso-happy.png" style="max-height: 200px">
                 <aside class="notes">
+                    <div>TEMPO: 19:00</div>
                     <p>C'est les pinguins et les ours polaires qui sont heureux</p>
                 </aside>
-            </section>
-            <section data-auto-animate>
-                <div class="grid-perso">
-                    <div class="perso active">
-                        <div class="portrait">
-                            <img src="./images/inkling.webp">
-                        </div>
-                        Professeur Inkling
-                    </div>
-                    <div class="perso">
-                        <div class="portrait">
-                            <img src="./images/cassie.png">
-                        </div>
-                        Cassie
-                    </div>
-                </div>
-                <aside class="notes">
-                    Oui mais concrètement, comment j'écris un composant Qwik ?
-                </aside>
-            </section>
-            <section data-auto-animate>
-                <div class="grid-perso">
-                    <div class="perso">
-                        <div class="portrait">
-                            <img src="./images/inkling.webp">
-                        </div>
-                        Professeur Inkling
-                    </div>
-                    <div class="perso active">
-                        <div class="portrait">
-                            <img src="./images/cassie.png">
-                        </div>
-                        Cassie
-                    </div>
-                </div>
-                <aside class="notes">
-                    Je vous montre ça Professeur
-                </aside>
-            </section>
-            <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
-                    <script type="text/template">
-                        import {component$} from "@builder.io/qwik";
-
-                        export default component$(() => {
-                        return (
-                        <>
-                        <h1>Hello Bdx IO !</h1>
-                        <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
-                        </>
-                        );
-                        });
-                    </script>
-                </code>
-                </pre>
-                <aside class="notes">
-                    <div>Voilà un exemple avec:</div>
-                    <div>- un rendu</div>
-                    <div>- une interaction</div>
-                </aside>
-            </section>
-            <section data-auto-animate>
-                <p>Pour ceux qui aiment React</p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
-                    <script type="text/template">
-                        /** @jsxImportSource react */
-                        import { qwikify$ } from '@builder.io/qwik-react';
-
-                        // Create React component standard way
-                        function Greetings() {
-                        return <p>Hello from React</p>;
-                        }
-
-                        // Convert React component to Qwik component
-                        export const QGreetings = qwikify$(Greetings);
-                    </script>
-                </code>
-                </pre>
-            </section>
-            <section data-auto-animate>
-                <p>Oui, ça ressemble à du React.</p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
-                    <script type="text/template">
-                        /** @jsxImportSource react */
-                        import { qwikify$ } from '@builder.io/qwik-react';
-
-                        // Create React component standard way
-                        function Greetings() {
-                        return <p>Hello from React</p>;
-                        }
-
-                        // Convert React component to Qwik component
-                        export const QGreetings = qwikify$(Greetings);
-                    </script>
-                </code>
-                </pre>
-                <p>Et on peut aussi intégrer des composants <a
-                        href="https://www.npmjs.com/package/@qwikdev/qwik-angular">Angular</a></p>
             </section>
         </section>
 
@@ -1338,8 +1372,9 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    Tu as dit que l'état de mon application était transférée depuis le backend... Mais cela doit être
-                    compliqué !
+                    <div>TEMPO: 19:00</div>
+                    Tu as dit que l'état de mon application devait être transférée depuis le backend...
+                    Mais cela doit être compliqué ! Je faisais pareil dans mon application Angular avec universal.
                 </aside>
             </section>
             <section data-auto-animate>
@@ -1369,67 +1404,81 @@
                         import { component$, useStore } from '@builder.io/qwik';
 
                         export default component$(() => {
-                        return (
-                        <>
-                        <h1>Hello Bdx IO !</h1>
-                        I am a static component, there is no reason to ever download me to the client.
-                        <hr/>
-                        <Counter/>
-                        </>
-                        );
+                            return (
+                                <>
+                                    <h1>Hello Bdx IO !</h1>
+                                    <p>I am a static component, there is no reason to ever download me to the client.</p>
+                                    <hr/>
+                                    <Counter/>
+                                </>
+                            );
                         });
 
                         export const Counter = component$(() => {
-                        const store = useStore({ count: 0 });
-                        return (
-                        <>
-                        I am a dynamic component. Qwik will download me only when it is time to re-render me after the
-                        user clicks on the <code>+1</code> button.
-                        <br/>
-                        Current count: {store.count}
-                        <br/>
-                        <button onClick$={() => store.count++}>+1</button>
-                        </>
-                        );
-                        });
+                            const store = useStore({ count: 0 });
 
+                            return (
+                                <>
+                                    <p>I am a dynamic component. Qwik will download me only when it is time to re-render me after
+                                        the user clicks on the <code>+1</code> button.</p>
+                                    <p>Current count: {store.count}</p>
+                                    <button onClick$={() => store.count++}>+1</button>
+                                </>
+                            );
+                        });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 19:15</div>
+                    <div>En haut, un composant statique: pas d'état</div>
+                    <div>En bas, un composant dynamique; on déclare un store (ou closure, mais attention)</div>
+                </aside>
             </section>
             <section>
                 Etat partagé: Contexte
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1,4,6,16,21">
+                <code data-trim class="code-font-sm" data-line-numbers="1,4,6,17,23">
                     <script type="text/template">
                         export const CART_CTX = createContextId<{ content: ProductInstance[] }>('cart');
 
                         export default component$(() => {
-                        const cart = useStore({content: []});
+                            const cart = useStore({content: []});
 
-                        useContextProvider(CART_CTX, cart);
+                            useContextProvider(CART_CTX, cart);
 
-                        const numberOfArticles = useComputed$(() => {
-                        return cart.content.reduce((p, c: ProductInstance) => c.howMany + p, 0);
-                        });
+                            const numberOfArticles = useComputed$(() => {
+                                return cart.content.reduce((p, c: ProductInstance) => c.howMany + p, 0);
+                            });
 
-                        return (<>
-                        <div>
-                                <Link href={'/cart-list'} class={'a-btn'}>Voir mes {numberOfArticles} produits</Link>
-                            </div>
-                        <Slot/> // Child components can access the context
-                        </>);
+                            return (
+                                <>
+                                    <div>
+                                        <Link href={'/cart-list'} class={'a-btn'}>Voir mes {numberOfArticles} produits</Link>
+                                    </div>
+                                    <Slot/> // Child components can access the context
+                                </>
+                            );
                         });
 
                         export default component$((props: ProductCardProps) => {
-                        const cart = useContext(CART_CTX);
+                            const cart = useContext(CART_CTX);
 
-                        // You can use the context
-                        // ...
+                            // You can use the context
+                            // ...
                         });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>On peut partager simplement notre contexte avec les autres composants composants</div>
+                </aside>
+            </section>
+            <section>
+                Qwik s'occupe de transférer ce qui est nécessaire
+                <aside class="notes">
+                    <div>TEMPO: 19:45</div>
+                </aside>
             </section>
             <section data-auto-animate>
                 <div class="grid-perso">
@@ -1473,24 +1522,30 @@
                 <p>Serialization (Les implications du $)</p>
                 <a href="https://qwik.builder.io/docs/advanced/dollar/" target="_blank">Qwik Optimizer</a>
                 <aside class="notes">
-                    <p>Qwik veut que l'état de l'application soit à tout moment serialisable (pour permettre la
-                        résumabilité).</p>
-                    <p>Mais que se passe-t-il si je veux quand même ajouter un objet non sérialisable dans cet état
-                        ?</p>
+                    <div>TEMPO: 19:55</div>
+                    <p>Fonctionnement de Qwik: on découpe tout en petits JS</p>
+                    <p>Implication: état sérialisable à tout moment.</p>
+                    <p>Voyons pourquoi...</p>
                 </aside>
             </section>
             <section>
                 <p>Un composant Qwik</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
-                import { component$ } from '@builder.io/qwik';
+                    <script type="text/template">
+                        import { component$ } from '@builder.io/qwik';
 
-                export default component$(() => {
-                    console.log('render');
-                    return <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
-                });
+                        export default component$(() => {
+                            console.log('render');
+                            return <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
+                        });
+                    </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 20:25</div>
+                    <div>Exemple tout simple de composant</div>
+                </aside>
             </section>
             <section>
                 <p>... et sa version "compilée"</p>
@@ -1527,10 +1582,13 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                Not all valid JavaScript code is valid code for the Optimizer.
+                Not all valid TypeScript code is valid code for the Optimizer.
+                <aside class="notes">
+                    <div>TEMPO: 21:25</div>
+                </aside>
             </section>
             <section data-auto-animate>
-                Not all valid JavaScript code is valid code for the Optimizer.
+                Not all valid TypeScript code is valid code for the Optimizer.
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                 // Invalid
@@ -1546,60 +1604,72 @@
                 foo$(bar);
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 22:25</div>
+                    <p>Invalide car non exporté</p>
+                    <p>Valides sinon</p>
+                </aside>
             </section>
             <section data-auto-animate>
-                Not all valid JavaScript code is valid code for the Optimizer.
+                Not all valid TypeScript code is valid code for the Optimizer.
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
                     // Invalid
                     component$(() => {
-                    let foo = 'value'; // variable is not a const
-                    return
-                    <div onClick$={() => console.log(foo)}/>
+                        let foo = 'value'; // variable is not a const
+                        return <div onClick$={() => console.log(foo)}/>
                     });
 
                     // Invalid
                     component$(() => {
-                    const foo = new MyCustomClass(12); // MyCustomClass is not serializable
-                    return
-                    <div onClick$={() => console.log(foo)}/>
+                        const foo = new MyCustomClass(12); // MyCustomClass is not serializable
+                        return <div onClick$={() => console.log(foo)}/>
                     });
 
                     // Valid
                     component$(() => {
-                    const foo = 'value'; // ok
-                    return
-                    <div onClick$={() => console.log(foo)}/>
+                        const foo = 'value'; // ok
+                        return <div onClick$={() => console.log(foo)}/>
                     });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 23:10</div>
+                    <p>Pas de let</p>
+                    <p>Pas de classes (sérializable)</p>
+                </aside>
             </section>
             <section>
-                Fonctions non sérialisables...
+                Contexte non sérializable
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers="1-13|13">
                     <script type="text/template">
                     const controls = useStore({
-                    actual: 0,
-                    elapsed: 0,
-                    playing: false,
-                    bc: undefined,
-                    interval: undefined
+                        actual: 0,
+                        elapsed: 0,
+                        playing: false,
+                        bc: undefined,
+                        interval: undefined
                     };
 
                     const tmp = setInterval(() => {
-                    controls.elapsed++;
-                    controls.bc?.postMessage({type: 'elapsed', value: controls.elapsed});
+                        controls.elapsed++;
+                        controls.bc?.postMessage({type: 'elapsed', value: controls.elapsed});
                     }, 1000);
                     controls.interval = noSerialize(() => clearInterval(tmp));
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 23:45</div>
+                    <p>utiliser noSerialize</p>
+                    <p>à recréer côté client</p>
+                </aside>
             </section>
-            <section>
-                <p>Aide: Capture du champ lexical</p>
+            <!-- <section>
+                <p>Capture du champ lexical</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers="1-18|3,5,23,28">
                     <script type="text/template">
@@ -1643,7 +1713,7 @@
                     <p>Mais il y a des choses à respecter</p>
                     <p>Il faut s'attendre à ce genre de problèmes quand on fait du Qwik</p>
                 </aside>
-            </section>
+            </section> -->
         </section>
 
 
@@ -1665,7 +1735,8 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    <p>Oui mais moi, j'aimais bien plein de fonctionnalités de l'ancien site...</p>
+                    <div>TEMPO: 24:15</div>
+                    <p>Oui mais moi, j'aimais bien plein de fonctionnalités de l'ancien framework...</p>
                     <p>Je vais perdre des choses avec Qwik !</p>
                 </aside>
             </section>
@@ -1695,26 +1766,25 @@
                 <code data-trim class="code-font-sm" data-line-numbers="1-18|11">
                     <script type="text/template">
                         export default component$(() => {
-                        return <>
-                        <h1>Aidez les Octonautes à sauver la planète !</h1>
-                        <div class="bdx-io">
+                            return <>
+                                <h1>Aidez les Octonautes à sauver la planète !</h1>
+                                <div class="bdx-io">
                                     <ImageBdxIO alt={'Logo BdxIO'}/>
                                 </div>
-                        <div class="author center-image">
+                                <div class="author center-image">
                                     <ImageAuthor class={'circle'} alt={'Avatar cfrezier'}/>@cfrezier
                                 </div>
-                        <Cart>
-                                    <Slot/>
-                                </Cart>
-                        <div class="onepoint center-image">
-                                    Made with ❤️ by @cfrezier impersonating Cassie, with the courtesy of <ImageOnepoint
-                                alt={'Logo onepoint'}/>
-                                </div>
-                        </>;
+                                <Slot/>
+                                <div class="onepoint center-image">footer</div>
+                            </>;
                         });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 24:25</div>
+                    <div>Squelette réutilisable (menus, navigation, ...)</div>
+                </aside>
             </section>
             <section>
                 <p>CSS Modules</p>
@@ -1723,7 +1793,7 @@
                     <script type="text/template">
                     //src/components/MyComponent/MyComponent.module.css
                     .container {
-                    background-color: red;
+                        background-color: red;
                     }
 
                     // src/components/MyComponent/MyComponent.tsx
@@ -1731,38 +1801,50 @@
                     import styles from './MyComponent.module.css';
 
                     export default component$(() => {
-                    return
-                    <div class={styles.container}>Hello world</div>;
+                        return <div class={styles.container}>Hello world</div>;
                     });
 
                     // OR
                     import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
                     export default component$(() => {
-                    useStylesScoped$(`
-                    .container {
-                    background-color: red;
-                    }
-                    `);
-                    return
-                    <div class="container">Hello world</div>;
+                        useStylesScoped$(`
+                            .container {
+                                background-color: red;
+                            }
+                        `);
+                        return <div class="container">Hello world</div>;
                     });
 
                     // OR
                     import styles from './MyComponent.css?inline';
 
                     export default component$(() => {
-                    useStylesScoped$(styles);
-                    return
-                    <div class="container">Hello world</div>;
+                        useStylesScoped$(styles);
+                        return <div class="container">Hello world</div>;
                     });
-
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 24:50</div>
+                    <div>fichier css externalisé</div>
+                    <div>inliné dans le composant avec scope</div>
+                    <div>les 2 combinés</div>
+                </aside>
             </section>
             <section>
                 <a href="https://qwik.builder.io/docs/qwikcity/#qwik-city" target="_blank">Qwik City</a>
+                <aside class="notes">
+                    <div>TEMPO: 25:40</div>
+                    <div>Meta framework</div>
+                    <div>Qwik City => Qwik</div>
+                    <div>Next.js => React</div>
+                    <div>Nuxt => Vue</div>
+                    <div>SvelteKit => Svelte</div>
+                    <div>Analog => Angular.</div>
+                    <div>Lien vers la doc</div>
+                </aside>
             </section>
             <section data-auto-animate>
                 Routing
@@ -1792,6 +1874,7 @@
                 </code>
                 </pre>
                 <aside class="notes">
+                    <div>TEMPO: 26:05</div>
                     <p>On a les différents formats (md, mdx, ts, tsx)</p>
                     <p>On peut gérer des paramètres simples</p>
                     <p>On peut gérer des paramètres multiples</p>
@@ -1802,24 +1885,24 @@
                 Routing
                 <p class="code-font-sm">Récupération de paramètres</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="2,5,6">
+                <code data-trim class="code-font-sm" data-line-numbers="2,5,6, 9-11">
                     <script type="text/template">
                         import { component$ } from '@builder.io/qwik';
                         import { useLocation } from '@builder.io/qwik-city';
 
                         export default component$(() => {
-                        const loc = useLocation();
-                        return
-                        <div>Hello {loc.params.username}!</div>;
+                            const loc = useLocation();
+                            return <div>Hello {loc.params.username}!</div>;
                         });
+
+                        // File routing
+                        //    └── [username]/
+                        //            └── index.ts      # https://example.com/docs/1234
                     </script>
                 </code>
                 </pre>
                 <aside class="notes">
-                    <p>On a les différents formats (md, mdx, ts, tsx)</p>
-                    <p>On peut gérer des paramètres simples</p>
-                    <p>On peut gérer des paramètres multiples</p>
-                    <p>On peut utiiser des layouts</p>
+                    <div>TEMPO: 27:25</div>
                 </aside>
             </section>
             <section>
@@ -1828,29 +1911,28 @@
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
                         export const useProductDetails = routeLoader$(async (requestEvent) => {
-                        const url = `/api/products/id/${requestEvent.params.productId}`;
-                        const res = await fetch(url);
-                        const product = await res.json();
-                        return product as Product;
+                            const url = `/api/products/id/${requestEvent.params.productId}`;
+                            const res = await fetch(url);
+                            const product = await res.json();
+                            return product as Product;
                         });
 
                         export default component$(() => {
-                        // In order to access the `routeLoader$` data within a Qwik Component, you need to call the hook.
-                        const signal = useProductDetails(); // Readonly
-                        <Signal
-                        <Product>>
-                        return <>
-                            <Home></Home>
-                            <ProductCard product={signal.value}></ProductCard>
-                        </>;
+                            // In order to access the `routeLoader$` data within a Qwik Component, you need to call the hook.
+                            const signal = useProductDetails(); // Readonly
+                            return <>
+                                <Home></Home>
+                                <ProductCard product={signal.value}></ProductCard>
+                            </>;
                         });
                     </script>
                 </code>
                 </pre>
                 <aside class="notes">
+                    <div>TEMPO: 27:45</div>
                     <p>Charge des données TOUJOURS côté serveur</p>
                     <p>Est aussi déclenché lors de navigation SPA/MPA</p>
-                    <p>Exécutés après les midddlewares, et avant de render (pour gagner du temps)</p>
+                    <p>Exécutés après les middlewares, et avant de render (pour gagner du temps)</p>
                 </aside>
             </section>
             <section>
@@ -1859,22 +1941,18 @@
                 <code data-trim class="code-font-sm" data-line-numbers="1-34|5,6,18-29">
                     <script type="text/template">
                             export default component$(() => {
-                            const date = useSignal(new Date().getTime());
+                                const date = useSignal(new Date().getTime());
 
-                            // @ts-ignore: Unused declaration
-                            const reposResource = useResource$
-                            <Product[]>(({ track, cleanup }) => {
-                            track(() => date.value);
-                            const controller = new AbortController();
-                            cleanup(() => controller.abort());
-                            // Fetch the data and return the promises.
-                            return getProducts(controller);
-                            });
+                                const reposResource = useResource$<Product[]>(({ track, cleanup }) => {
+                                    track(() => date.value);
+                                    const controller = new AbortController();
+                                    cleanup(() => controller.abort());
+                                    // Fetch the data and return the promises.
+                                    return getProducts(controller);
+                                });
 
-                            console.log('Render');
-
-                            return (
-                            <main>
+                                return (
+                                    <main>
                                         <section>
                                             <Resource
                                                     value={reposResource}
@@ -1894,22 +1972,23 @@
                                             <button onClick$={() => date.value = new Date().getTime()}>Rafraichir</button>
                                         </section>
                                     </main>
-                            );
+                                );
                             });
 
                     </script>
                 </code>
                 </pre>
                 <aside class="notes">
+                    <div>TEMPO: 28:45</div>
                     <p>Depuis le client OU le serveur</p>
-                    <p>Version asynchrone de useComputed$</p>
                     <p>Utilisé avec le composant Resource, il permet de gérer directement différents états en fonction
                         de l'état de la resource (loading, resolved, rejected)</p>
+                    <p>On affiche une liste de produits si resolved</p>
                 </aside>
             </section>
             <section>
                 <p>Head</p>
-                <p class="code-font-sm">Récupération de paramètres</p>
+                <p class="code-font-sm">meta, links, ...</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers="3-21|23-39">
                     <script type="text/template">
@@ -1917,47 +1996,55 @@
 
                         // Static head
                         export const head: DocumentHead = {
-                        title: "Les octonautes sauvent le monde avec Qwik",
-                        meta: [
-                        {
-                        name: "description",
-                        content: "Qwik site description",
-                        },
-                        ],
-                        links: [
-                        {
-                        rel: 'stylesheet',
-                        id: 'font-family-1-css',
-                        href: 'https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd',
-                        type: 'text/css',
-                        media: 'all'
-                        },
-                        ],
+                            title: "Les octonautes sauvent le monde avec Qwik",
+                            meta: [
+                                {
+                                    name: "description",
+                                    content: "Qwik site description",
+                                },
+                            ],
+                            links: [
+                                {
+                                    rel: 'stylesheet',
+                                    id: 'font-family-1-css',
+                                    href: 'https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd',
+                                    type: 'text/css',
+                                    media: 'all'
+                                },
+                            ],
                         };
 
                         // Dynamic Head
                         export const head: DocumentHead = ({resolveValue, params}) => {
-                        const product = resolveValue(useProductDetails);
-                        return {
-                        title: `Détails de "${product.name}"`,
-                        meta: [
-                        {
-                        name: 'description',
-                        content: product.description,
-                        },
-                        {
-                        name: 'id',
-                        content: product.id,
-                        },
-                        ],
-                        };
-                        };
+                            const product = resolveValue(useProductDetails);
+                            return {
+                                title: `Détails de "${product.name}"`,
+                                meta: [
+                                    {
+                                        name: 'description',
+                                        content: product.description,
+                                    },
+                                    {
+                                        name: 'id',
+                                        content: product.id,
+                                    },
+                                ],
+                            };
+                        });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 29:20</div>
+                    <div>Permettre de définir les valeurs stockées dans le head du document</div>
+                    <div>Éventuellement de manière dynamique avec résolutions de requêtes avant injection</div>
+                </aside>
             </section>
             <section>
                 <p>Optimisation automatique des images</p>
+                <aside class="notes">
+                    <div>TEMPO: 30:20</div>
+                </aside>
             </section>
             <section>
                 <a href="https://qwik.builder.io/docs/integrations/image-optimization/" target="_blank">Image
@@ -1975,23 +2062,27 @@
                         ...
 
                         export default component$(() => {
-                        return <>
-                        <h1>Aidez les Octonautes à sauver la planète !</h1>
-                        <div class="onepoint">
-                                        <ImageOnepoint/>
-                                    </div>
-                        <div class="bdx-io">
-                                        <ImageBdxIO/>
-                                    </div>
-                        <div class="author center-image">
-                                        <ImageAuthor class={'circle'}/>@cfrezier
-                                    </div>
-                        <Slot/>
-                        </>;
+                            return <>
+                                <h1>Aidez les Octonautes à sauver la planète !</h1>
+                                <div class="onepoint">
+                                    <ImageOnepoint/>
+                                </div>
+                                <div class="bdx-io">
+                                    <ImageBdxIO/>
+                                </div>
+                                <div class="author center-image">
+                                    <ImageAuthor class={'circle'}/>@cfrezier
+                                </div>
+                                <Slot/>
+                            </>;
                         });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>import bizarre</div>
+                    <div>aucune décalaration à faire</div>
+                </aside>
             </section>
             <section>
                 <pre data-id="code-animation">
@@ -2010,6 +2101,11 @@
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>lazy load automatique</div>
+                    <div>utilisation de srcset avec différentes tailles</div>
+                    <div>images mises à disposition automatiquement sous différentes résolution</div>
+                </aside>
             </section>
         </section>
 
@@ -2031,6 +2127,7 @@
                     </div>
                 </div>
                 <aside class="notes">
+                    <div>TEMPO: 31:20</div>
                     Mais Cassie, comment allons-nous gérer notre catalogue de produits ?
                 </aside>
             </section>
@@ -2051,25 +2148,26 @@
                     </div>
                 </div>
                 <aside class="notes">
-                    On peut faire quelques trucs avec Qwik déjà
+                    On a quelques outils côté Qwik city pour ça également !
                 </aside>
             </section>
             <section>
-                <p> Déclencher des routeAction$</p>
+                <p>routeAction$</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm" data-line-numbers="1-29|2,12,15,21|26-29">
                     <script type="text/template">
                         // Définition de l'action
                         export const useCommand = routeAction$(async (payload) => {
-                        const command = saveCommand(payload);
-                        console.log(`Commande reçue: ${command}`);
-                        return {
-                        success: command > -1,
-                        commandId: command
-                        };
+                            const command = saveCommand(payload); // DB write, ...
+                            console.log(`Commande reçue: ${command}`);
+                            return {
+                                success: command > -1,
+                                commandId: command
+                            };
                         });
-                        //...
 
+                        //...
+                        const action = useCommand();
 
                         // en mode programmatique
                         <button onClick$={async ()=> {await action.submit({cart});}}
@@ -2085,37 +2183,17 @@
 
                         // Utilisation des retours
                         {action.value?.success && (
-                        <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux marins vous remercient !</p>
+                            <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux marins vous remercient !</p>
                         )}
                     </script>
                 </code>
                 </pre>
                 <aside class="notes">
-                    <p>Il faut bien commencer quelque part: comment faire un appel ?</p>
-                </aside>
-            </section>
-            <section><p>Middlewares</p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
-                    <script type="text/template">
-                        // onRequest, onGet, onPost, onPut, onPatch, onDelete
-                        export const onRequest: RequestHandler = async ({next, url}) => {
-                        console.log('Before request', url);
-                        await next();
-                        console.log('After request', url);
-                        };
-
-                        export const onPut: RequestHandler = async ({ redirect, next }) => {
-                        if (!isLoggedIn()) {
-                        throw redirect(308, '/login');
-                        }
-                        await next();
-                        };
-                    </script>
-                </code>
-                </pre>
-                <aside class="notes">
-                    <p>On retrouve des mécanismes classiques de backend</p>
+                    <div>TEMPO: 31:30</div>
+                    <p>Tout d'abord: La réponse à un formulaire ?</p>
+                    <p>On définit l'action côté serveur dans le routeAction$</p>
+                    <p>Utilisation programmatique ou formulaire</p>
+                    <p>Accès aux valeurs de retour</p>
                 </aside>
             </section>
             <section>
@@ -2129,27 +2207,89 @@
 
                         // onRequest, onGet, onPost, onPut, onPatch, onDelete
                         export const onGet: RequestHandler = async ({json, params}) => {
-                        const product = file.find(product => product.id === params.productId);
-                        if (product) {
-                        json(200, product);
-                        } else {
-                        json(404, 'product not found');
-                        }
+                            const product = file.find(product => product.id === params.productId);
+                            if (product) {
+                                json(200, product);
+                            } else {
+                                json(404, 'product not found');
+                            }
                         };
                     </script>
                 </code>
                 </pre>
                 <aside class="notes">
-                    <p>On peut répondre directement avec le backend Qwik si c'est ce qu'on souhaite</p>
+                    <div>TEMPO: 32:20</div>
+                    <p>On peut également définir directement des endpoints plus classiques</p>
+                </aside>
+            </section>
+            <section>
+                <p>Middlewares</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        // plugin.ts or plugin@auth.ts or layout.ts
+
+                        // onRequest, onGet, onPost, onPut, onPatch, onDelete
+                        export const onRequest: RequestHandler = async ({next, url}) => {
+                            console.log('Before request', url);
+                            await next();
+                            console.log('After request', url);
+                        };
+
+                        export const onPut: RequestHandler = async ({ redirect, next }) => {
+                            if (!isLoggedIn()) {
+                                throw redirect(308, '/login');
+                            }
+                            await next();
+                        };
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 32:50</div>
+                    <p>Définissables dans les layouts, ou dans plugin.ts ou plugin@xxx.ts</p>
+                    <p>Peut servir comme on en a l'habitude pour auth, connection DB, logs...</p>
+                    <p>L'ordre d'exécution inter plugin est alphabétique sur leur nom</p>
                 </aside>
             </section>
             <section>
                 <p>server$</p>
-                <ul>
-                    <li><p>Un autre type de fonction exécutée sur le serveur</p></li>
-                    <li><p>permet de streamer ses réponses</p></li>
-                    <li><p>Middlewares uniquement de plugin.ts</p></li>
-                </ul>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        const stream = server$(async function* () {
+                            for (let i = 0; i < 10; i++) {
+                                yield i;
+                                await new Promise((resolve) => setTimeout(resolve, 1000));
+                            }
+                        });
+
+                        export default component$(() => {
+                            const message = useSignal('');
+                            return (
+                                <div>
+                                    <button
+                                        onClick$={async () => {
+                                        const response = await stream();
+                                        for await (const i of response) {
+                                            message.value += ` ${i}`;
+                                        }
+                                    }}>
+                                        start
+                                    </button>
+                                    <div>{message.value}</div>
+                                </div>
+                            );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 33:50</div>
+                    <p>Un autre type de fonction exécutée sur le serveur</p>
+                    <p>permet de streamer ses réponses</p>
+                    <p>Middlewares uniquement de plugin.ts</p>
+                </aside>
             </section>
         </section>
 
@@ -2171,6 +2311,7 @@
                     </div>
                 </div>
                 <aside class="notes">
+                    <div>TEMPO: 34:50</div>
                     Et comment vas-tu vérifier que ce que tu as écrit est correct ?
                 </aside>
             </section>
@@ -2194,10 +2335,15 @@
                     Facile, je vais utiliser Vitest.
                 </aside>
             </section>
-            <section>
+            <section data-auto-animate="vitest">
                 <a href="https://qwik.builder.io/docs/integrations/vitest/" target="_blank">Vitest</a>
+                <aside class="notes">
+                    <div>TEMPO: 35:00</div>
+                    <div>Framework de test lié à Vite</div>
+                </aside>
             </section>
-            <section>
+            <section data-auto-animate="vitest">
+                <a href="https://qwik.builder.io/docs/integrations/vitest/" target="_blank">Vitest</a>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
@@ -2205,6 +2351,11 @@
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 35:05</div>
+                    <div>intégration à mon app</div>
+                    <div>une fois fait je peux écrire des tests tel que...</div>
+                </aside>
             </section>
             <section>
                 <pre data-id="code-animation">
@@ -2216,33 +2367,37 @@
 
                         // Affichage
                         test(`[ExampleTest Component]: Should render ⭐`, async () => {
-                        const { screen, render } = await createDOM();
-                        await render(
-                        <ExampleTest flag={true}/>);
-                        expect(screen.outerHTML).toContain('⭐');
-                        const div = screen.querySelector('.icon') as HTMLElement;
-                        expect(div.outerHTML).toContain('⭐');
+                            const { screen, render } = await createDOM();
+                            await render(<ExampleTest flag={true}/>);
+                            expect(screen.outerHTML).toContain('⭐');
+                            const div = screen.querySelector('.icon') as HTMLElement;
+                            expect(div.outerHTML).toContain('⭐');
                         });
 
                         // Interactivité
                         test(`[ExampleTest Component]: Click counter +1`, async () => {
-                        const { screen, render, userEvent } = await createDOM();
-                        await render(
-                        <ExampleTest flag={true}/>);
+                            const { screen, render, userEvent } = await createDOM();
+                            await render(<ExampleTest flag={true}/>);
 
-                        expect(screen.outerHTML).toContain('Count:0');
+                            expect(screen.outerHTML).toContain('Count:0');
 
-                        const spanBefore = screen.querySelector('span') as HTMLDivElement;
-                        await userEvent('.btn-counter', 'click');
-                        expect(spanBefore.innerHTML).toEqual('Count:1');
+                            const spanBefore = screen.querySelector('span') as HTMLDivElement;
+                            await userEvent('.btn-counter', 'click');
+                            expect(spanBefore.innerHTML).toEqual('Count:1');
 
-                        const spanAfter = screen.querySelector('span') as HTMLDivElement;
-                        await userEvent('button', 'click');
-                        expect(spanAfter.innerHTML).toEqual('Count:2');
+                            const spanAfter = screen.querySelector('span') as HTMLDivElement;
+                            await userEvent('button', 'click');
+                            expect(spanAfter.innerHTML).toEqual('Count:2');
                         });
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <div>TEMPO: 35:10</div>
+                    <div>exemple de test rendering</div>
+                    <div>exemple de test d'interaction</div>
+                    <div>endpoints: fonctions pures, testables sans code spécifique</div>
+                </aside>
             </section>
         </section>
 
@@ -2264,6 +2419,7 @@
                     </div>
                 </div>
                 <aside class="notes">
+                    <div>TEMPO: 36:10</div>
                     C'est très bien Cassie, mais si je dois charger ma librairie-de-pirate, cela va forcément impacter
                     toute l'application
                 </aside>
@@ -2290,6 +2446,9 @@
             </section>
             <section>
                 <p>Partytown</p>
+                <aside class="notes">
+                    <div>TEMPO: 36:25</div>
+                </aside>
             </section>
             <section data-auto-animate data-auto-animate-id="code1">
                 <p>Partytown</p>
@@ -2300,26 +2459,26 @@
                     import {QwikPartytown} from "~/components/partytown/partytown";
 
                     export default component$(() => {
-                    useStyles$(globalStyles);
-                    return (
-                    <QwikCityProvider>
-                        <head>
-                            <meta charSet="utf-8"/>
-                            <link rel="manifest" href="/manifest.json"/>
-                            <RouterHead/>
-                            <QwikPartytown debug={true} forward={['hljs']}/>
-                                <script
-                                        async
-                                        type="text/partytown"
-                                        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"
-                                />
-                        </head>
-                        <body lang="en">
-                        <RouterOutlet/>
-                        <ServiceWorkerRegister/>
-                        </body>
-                    </QwikCityProvider>
-                    );
+                        useStyles$(globalStyles);
+                        return (
+                            <QwikCityProvider>
+                                <head>
+                                    <meta charSet="utf-8"/>
+                                    <link rel="manifest" href="/manifest.json"/>
+                                    <RouterHead/>
+                                    <QwikPartytown debug={true} forward={['hljs']}/>
+                                        <script
+                                                async
+                                                type="text/partytown"
+                                                src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"
+                                        />
+                                </head>
+                                <body lang="en">
+                                <RouterOutlet/>
+                                <ServiceWorkerRegister/>
+                                </body>
+                            </QwikCityProvider>
+                        );
                     });
                     </script>
                 </code>
@@ -2330,6 +2489,7 @@
                 <p>...et bien d'autres choses encore !</p>
                 <a href="https://qwik.builder.io/docs/integrations/#list-of-possible-integrations" target="_blank">Intégrations</a>
                 <aside class="notes">
+                    <div>TEMPO: 37:10</div>
                     <p>Il y a tout un tas de choses qui ont été prémâchées</p>
                     <ul>
                         <li>Internationalisation</li>
@@ -2359,6 +2519,7 @@
                     </div>
                 </div>
                 <aside class="notes">
+                    <div>TEMPO: 37:50</div>
                     Ok Cassie, alors, ça donne quoi ce site finalement ?
                 </aside>
             </section>
@@ -2384,6 +2545,9 @@
             </section>
             <section>
                 <a href="https://qwik.builder.io/docs/deployments/" target="_blank">Deployments</a>
+                <aside class="notes">
+                    <div>TEMPO: 38:00</div>
+                </aside>
             </section>
             <!--<section>
                 <p>Intégration Node</p>
@@ -2409,6 +2573,7 @@
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
+                        // intégration cloud-run
                         npm run qwik add cloud-run
 
                         npm run build
@@ -2425,7 +2590,11 @@
                 </code>
                 </pre>
                 <aside class="notes">
+                    <div>TEMPO: 38:20</div>
+                    <div>montrer les fichiers de l'app</div>
+                    <div>TEMPO: 39:20 pendant le build</div>
                     <p>On peut même aller voir l'analyse LightHouse</p>
+                    <p>npx -p lighthouse lighthouse url --view</p>
                 </aside>
             </section>
             <section>
@@ -2451,6 +2620,7 @@
                     </div>
                 </div>
                 <aside class="notes">
+                    <div>TEMPO: 42:00</div>
                     <p>Cassie, c'est vraiment super ce que tu as construit. Mais et si je voulais aller encore plus loin
                         ?</p>
                     <p>Par exemple, j'aimerai qu'on ne génère pas une page chaque fois qu'un visiteur vient sur le site
@@ -2478,11 +2648,13 @@
                     <p>Je le fais tout de suite en utilisant l'intégration "Generation Statique"</p>
                 </aside>
             </section>
-            <section>
+            <section data-auto-animate="static">
                 <a href="https://qwik.builder.io/docs/guides/static-site-generation/" target="_blank">Génération HTML
                     statique</a>
             </section>
-            <section>
+            <section data-auto-animate="static">
+                <a href="https://qwik.builder.io/docs/guides/static-site-generation/" target="_blank">Génération HTML
+                    statique</a>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
@@ -2494,6 +2666,9 @@
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <p>Déploiement avec une image plus classique</p>
+                </aside>
             </section>
             <section>
                 <pre data-id="code-animation">
@@ -2501,21 +2676,24 @@
                     <script type="text/template">
                         // vite.config.ts
                         plugins: [staticAdapter({
-                        origin: "https://my-url",
+                            origin: "https://my-url",
                         })]
 
                         // Pour les routes avec des paramètres
                         export const onStaticGenerate: StaticGenerateHandler = async () => {
-                        return {
-                        // Accéder à la DB par exemple
-                        params: ["00001" ,"00002", "00003", "00004", "00005"].map((id) => {
-                        return { productId: id };
-                        }),
-                        };
+                            return {
+                                // Accéder à la DB par exemple
+                                params: ["00001" ,"00002", "00003", "00004", "00005"].map((id) => {
+                                    return { productId: id };
+                                }),
+                            };
                         };
                     </script>
                 </code>
                 </pre>
+                <aside class="notes">
+                    <p>Pour générer statiquement des pages avec paramètres (multiples si besoin)</p>
+                </aside>
             </section>
         </section>
 
@@ -2524,6 +2702,9 @@
             <p class="code-font-sm">NOTE: Aucun animal sauveteur imaginaire n'a été blessé durant cette présentation</p>
             <p class="code-font-sm"><a href="https://github.com/cfrezier/save-the-world-octonauts">Le repo avec les
                 slides et la démo !</a></p>
+            <aside class="notes">
+                <div>TEMPO: 43:10</div>
+            </aside>
         </section>
 
         <section>
@@ -2578,7 +2759,7 @@
 
                         export default component$(() => {
                         return (
-                        <QwikCityProvider>
+                            <QwikCityProvider>
                               <head>
                                 // ...
                                 <Insights
@@ -2597,15 +2778,15 @@
                         import { qwikInsights } from '@builder.io/qwik-labs/vite';
 
                         export default defineConfig(async () => {
-                        return {
-                        plugins: [
-                        qwikInsights({
-                        publicApiKey: loadEnv('', '.', '').PUBLIC_QWIK_INSIGHTS_KEY,
-                        }),
-                        //...
-                        ],
-                        // ...
-                        };
+                            return {
+                                plugins: [
+                                    qwikInsights({
+                                        publicApiKey: loadEnv('', '.', '').PUBLIC_QWIK_INSIGHTS_KEY,
+                                    }),
+                                    //...
+                                    ],
+                                // ...
+                            };
                         });
                     </script>
                 </code>
