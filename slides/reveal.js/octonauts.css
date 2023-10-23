@@ -23,6 +23,7 @@ body {
     .onepoint.for-intro {
         display: none;
     }
+
     .onepoint.no-intro {
         display: block;
     }
@@ -32,6 +33,7 @@ body.intro {
     .onepoint.for-intro {
         display: block;
     }
+
     .onepoint.no-intro {
         display: none;
     }
@@ -165,7 +167,7 @@ img.qwik-logo.small {
     vertical-align: middle;
 }
 
-.legacy tr, .legacy td{
+.legacy tr, .legacy td {
     height: 100px;
 }
 
@@ -215,4 +217,20 @@ img.rate.ml-auto {
 .code-font-hd {
     font-size: 24px;
     line-height: 24px;
+}
+
+.center-questions {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qrcode-repo {
+    > img {
+        width: 200px;
+        height: 200px;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0;
+    }
 }

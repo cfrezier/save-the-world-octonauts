@@ -43,6 +43,7 @@
             <aside class="notes">
                 Préparer terminal avec profil 'CONF'
                 Vérifier gcloud run deploy octo-eshop --source .
+                S'assurer que le service tourne
             </aside>
         </section>
 
@@ -378,8 +379,12 @@
                 </div>
                 <div>
                     <div><img src="./images/nuage-de-mots.webp" class="nuage"></div>
-                    <div><a href="https://github.com/cfrezier/save-the-world-octonauts" class="code-font-sm">Github
-                        présentation</a></div>
+                    <div>
+                        <a href="https://github.com/cfrezier/save-the-world-octonauts">
+                            <p class="code-font-sm">Code/Slides sur github</p>
+                            <div class="qrcode-repo"></div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <aside class="notes">
@@ -2697,11 +2702,12 @@
             </section>
         </section>
 
-        <section>
+        <section class="center-questions">
             <p>Questions ?</p>
             <p class="code-font-sm">NOTE: Aucun animal sauveteur imaginaire n'a été blessé durant cette présentation</p>
             <p class="code-font-sm"><a href="https://github.com/cfrezier/save-the-world-octonauts">Le repo avec les
                 slides et la démo !</a></p>
+            <div class="qrcode-repo"></div>
             <aside class="notes">
                 <div>TEMPO: 43:10</div>
             </aside>
@@ -2804,8 +2810,9 @@
 <script src="plugin/notes/notes.js"></script>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
-<script src="node_modules/reveal-gamepad-controller-plugin/dist/index.js"></script>
-<script>
+<script type="text/javascript" src="./node_modules/qrcode-generator/qrcode.js"></script>
+<script type="module">
+    import RevealGamepadController from "./node_modules/@cfrezier/reveal-gamepad-controller-plugin/dist/index.js";
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
     // - https://revealjs.com/config/
@@ -2814,8 +2821,18 @@
         hash: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealGamepadController],
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealGamepadController(Reveal)],
     });
+
+    const typeNumber = 0;
+    const errorCorrectionLevel = 'Q';
+    const qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData('https://github.com/cfrezier/save-the-world-octonauts');
+    qr.make();
+    const qrs = document.getElementsByClassName('qrcode-repo');
+    for (let idx = 0; idx < qrs.length; idx++) {
+        qrs[idx].innerHTML = qr.createImgTag();
+    }
 </script>
 </body>
 </html>
