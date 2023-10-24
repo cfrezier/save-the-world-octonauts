@@ -103,6 +103,6 @@
   },
   "dependencies": {
     "@cfrezier/reveal-gamepad-controller-plugin": "^1.1.2",
-    "qrcode-generator": "^1.4.4"
+    "qr-code-styling": "^1.6.0-rc.1"
   }
 }

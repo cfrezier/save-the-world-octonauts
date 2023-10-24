@@ -381,8 +381,8 @@
                     <div><img src="./images/nuage-de-mots.webp" class="nuage"></div>
                     <div>
                         <a href="https://github.com/cfrezier/save-the-world-octonauts">
-                            <p class="code-font-sm">Code/Slides sur github</p>
-                            <div class="qrcode-repo"></div>
+                            <p class="code-font-sm" style="margin: 0">Code/Slides sur github</p>
+                            <div class="qrcode qrcode-repo"></div>
                         </a>
                     </div>
                 </div>
@@ -2703,14 +2703,26 @@
         </section>
 
         <section class="center-questions">
-            <p>Questions ?</p>
-            <p class="code-font-sm">NOTE: Aucun animal sauveteur imaginaire n'a été blessé durant cette présentation</p>
-            <p class="code-font-sm"><a href="https://github.com/cfrezier/save-the-world-octonauts">Le repo avec les
-                slides et la démo !</a></p>
-            <div class="qrcode-repo"></div>
-            <aside class="notes">
-                <div>TEMPO: 43:10</div>
-            </aside>
+            <section>
+                <p>Questions ?</p>
+                <p class="code-font-sm">NOTE: Aucun animal sauveteur imaginaire n'a été blessé durant cette présentation</p>
+                <div style="display: flex; flex-direction: row;width: 100%;justify-content: space-evenly;">
+                    <div style="display: flex; flex-direction: column">
+                        <p class="code-font-sm">J'attends vos retours</p>
+                        <div class="qrcode qrcode-ofb"></div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 43:10</div>
+                </aside>
+            </section>
+            <section>
+                <div style="display: flex; flex-direction: column;">
+                    <p class="code-font-sm"><a href="https://github.com/cfrezier/save-the-world-octonauts">Le repo avec les
+                        slides et la démo !</a></p>
+                    <div class="qrcode qrcode-repo"></div>
+                </div>
+            </section>
         </section>
 
         <section>
@@ -2804,13 +2816,15 @@
             </section>
         </section>
     </div>
+    <div id="canvas-qr-repo" style="visibility: hidden"></div>
+    <div id="canvas-qr-ofb" style="visibility: hidden"></div>
 </div>
 
 <script src="dist/reveal.js"></script>
 <script src="plugin/notes/notes.js"></script>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
-<script type="text/javascript" src="./node_modules/qrcode-generator/qrcode.js"></script>
+<script type="text/javascript" src="./node_modules/qr-code-styling/lib/qr-code-styling.js"></script>
 <script type="module">
     import RevealGamepadController from "./node_modules/@cfrezier/reveal-gamepad-controller-plugin/dist/index.js";
     // More info about initialization & config:
@@ -2823,16 +2837,8 @@
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealGamepadController(Reveal)],
     });
-
-    const typeNumber = 0;
-    const errorCorrectionLevel = 'Q';
-    const qr = qrcode(typeNumber, errorCorrectionLevel);
-    qr.addData('https://github.com/cfrezier/save-the-world-octonauts');
-    qr.make();
-    const qrs = document.getElementsByClassName('qrcode-repo');
-    for (let idx = 0; idx < qrs.length; idx++) {
-        qrs[idx].innerHTML = qr.createImgTag();
-    }
 </script>
+<script type="module" src="./qrcodes.js"></script>
 </body>
 </html>
+
